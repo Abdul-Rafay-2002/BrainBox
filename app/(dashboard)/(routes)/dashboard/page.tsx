@@ -64,16 +64,18 @@ const Dashboard = () => {
 			<div className='px-4 md:px-14 lg:px-32  space-y-4'>
 				{tools.map((tool) => (
 					<Card
-					onClick={() =>{router.push(tool.href)}}
+						onClick={() => {
+							router.push(tool.href);
+						}}
 						key={tool.href}
-						className='p-4  bg-[#020817] border-white/5 flex items-start justify-between hover:shadow-md hover:shadow-blue-950 transition-colors cursor-pointer'>
+						className='p-4 group bg-[#020817] border-white/5 flex items-center justify-between hover:shadow-md hover:shadow-blue-950 transition-colors cursor-pointer'>
 						<div className='flex items-center  gap-x-4 flex-1'>
 							<div className={cn('p-2 w-fit rounded-lg', tool.bgColor)}>
 								<tool.icon className={cn('w-8 h-8', tool.color)} />
 							</div>
 							<div className='font-semibold text-white/90'>{tool.label}</div>
 						</div>
-							<ArrowRight size={30} color='#ccc'/>
+						<ArrowRight size={30} color='#ccc' className='group-hover:translate-x-2 transition-transform' />
 					</Card>
 				))}
 			</div>
